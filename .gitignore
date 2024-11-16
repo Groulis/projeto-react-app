@@ -10,7 +10,6 @@
 
 # production
 /build
-/android
 capacitor.config.json
 
 # misc
