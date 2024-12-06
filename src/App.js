@@ -1,22 +1,43 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./pages/header";
-import Home from "./pages/home";
-import About from "./pages/about";
-import Contact from "./pages/contact";
+import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="login-container">
+      <h1 className="login-title">Login</h1>
+      <form className="login-form">
+        <div className="input-group">
+          <label htmlFor="email">
+            <i className="icon email-icon"></i>
+            Email:
+          </label>
+          <input type="email" id="email" placeholder="Digite seu email" />
+        </div>
+        <div className="input-group">
+          <label htmlFor="password">
+            <i className="icon password-icon"></i>
+            Senha:
+          </label>
+          <input type="password" id="password" placeholder="Digite sua senha" />
+        </div>
+        <div className="options">
+          <label className="remember">
+            <input type="checkbox" />
+            Relembrar
+          </label>
+          <a href="/forgot-password" className="forgot-password">
+            Esqueceu a senha?
+          </a>
+        </div>
+        <div className="button-group">
+          <button type="submit" className="btn primary">Entrar</button>
+          <button type="button" className="btn secondary">
+            Continuar sem cadastro
+          </button>
+        </div>
+        <button type="button" className="btn tertiary">Cadastro</button>
+      </form>
+    </div>
   );
 }
 
